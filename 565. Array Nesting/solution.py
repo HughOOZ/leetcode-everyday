@@ -7,3 +7,16 @@ def arrayNesting(self, nums):
             res = max(res, count)
         return res
 
+class MySolution:
+        """
+Time Limit Exceeded
+"""
+    def arrayNesting(self, nums: List[int]) -> int:
+        results = []
+        for i in range(len(nums)):
+            result = set()
+            while i not in result:
+                result.add(i)
+                i = nums[i]
+            results.append(len(result))
+        return max(results)
