@@ -87,3 +87,11 @@ class Solution(object):
             if cur == Y:
                 ans += 1
         return ans
+
+def maxChunksToSorted(self, arr):
+        res, c1, c2 = 0, collections.Counter(), collections.Counter()
+        for a, b in zip(arr, sorted(arr)):
+            c1[a] += 1
+            c2[b] += 1
+            res += c1 == c2
+        return res
